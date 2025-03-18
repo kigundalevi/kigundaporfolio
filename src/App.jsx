@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import { Analytics } from "@vercel/analytics/react"
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/ui/NavBar";
@@ -55,6 +56,7 @@ const App = () => {
         <Role forwardedRef={(el) => (sectionRefs.current[0] = el)} />{" "}
         {/* forwardedRef props to pass into the child component to access the ref, then this will go into the useRef array  */}
         <About />
+        <Analytics />
         <Services />
         <Works forwardedRef={(el) => (sectionRefs.current[1] = el)} />
         <Contact />
