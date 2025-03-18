@@ -3,13 +3,21 @@ import { useEffect, useState, useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
 import { gsap } from "gsap";
 import Heading from "../ui/Heading";
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
+  const [formStatus, setFormStatus] = useState({
+    submitting: false,
+    success: false,
+    error: false,
+    message: ''
+  });
 
   const heading = useRef(null)
   const body = useRef(null)
   const contactSection = useRef(null)
+  const form = useRef(null);
 
   useEffect(() => {
     ScrollTrigger.create({
@@ -34,6 +42,42 @@ export default function Contact() {
     }, 1000);
   });
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormStatus({
+      submitting: true,
+      success: false,
+      error: false,
+      message: 'Sending your message...'
+    });
+
+    // Replace these with your actual EmailJS service ID, template ID, and public key
+    const serviceId = 'service_dyxmiqm';
+    const templateId = 'template_w2cw2st';
+    const publicKey = 'cTY9Sul5NOu_LMyKY';
+
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+      .then((result) => {
+        console.log('Email sent successfully:', result.text);
+        setFormStatus({
+          submitting: false,
+          success: true,
+          error: false,
+          message: 'Your message has been sent successfully!'
+        });
+        form.current.reset();
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error.text);
+        setFormStatus({
+          submitting: false,
+          success: false,
+          error: true,
+          message: 'Failed to send message. Please try again later.'
+        });
+      });
+  };
+
   return (
     <section
       id="contact"
@@ -51,22 +95,24 @@ export default function Contact() {
           <p ref={body} className="mt-4 max-w-md 2xl:max-w-2xl text-body-2 2xl:text-4xl text-accent-100 translate-y-10 opacity-0">
             I am currently available for freelance work.
           </p>
+          {formStatus.message && (
+            <div className={`mt-4 p-3 rounded ${formStatus.success ? 'bg-green-100 text-green-800' : formStatus.error ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800'}`}>
+              {formStatus.message}
+            </div>
+          )}
           <form
+            ref={form}
             name="contact"
-            action="/contact"
-            autoComplete="off"
-            // eslint-disable-next-line react/no-unknown-property
             className="mt-10 font-grotesk"
-            method="POST" 
+            onSubmit={handleSubmit}
           >
-            <input type="hidden" name="form-name" value="contact"/>
             <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2">
               <div className="relative z-0">
                   <input
                     required
                     type="text"
                     id="name"
-                    name="name"
+                    name="user_name"
                     className="peer block w-full appearance-none border-0 border-b border-accent-100 bg-transparent px-0 py-2.5 focus:outline-none focus:ring-0"
                     placeholder=" "
                   />
@@ -80,8 +126,8 @@ export default function Contact() {
               <div className="relative z-0">
                 <input
                   required
-                  type="text"
-                  name="email"
+                  type="email"
+                  name="user_email"
                   id="email"
                   className="peer block w-full appearance-none border-0 border-b border-accent-100 bg-transparent px-0 py-2.5 focus:outline-none focus:ring-0"
                   placeholder=" "
@@ -112,12 +158,13 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              className="button group mt-10 border duration-200 hover: hover:bg-transparent"
+              disabled={formStatus.submitting}
+              className="button group mt-10 border duration-200 hover: hover:bg-transparent disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <span className="relative">
                 <span className="absolute bottom-2 h-1 w-0  opacity-90 duration-300 ease-out group-hover:w-full"></span>
                 <span className="group-hover:text-accent-400">
-                  Send Message
+                  {formStatus.submitting ? 'Sending...' : 'Send Message'}
                 </span>
               </span>
             </button>
@@ -128,12 +175,12 @@ export default function Contact() {
             <h4 className="text-body-1 2xl:text-4xl font-semibold">Contact Details</h4>
             <div className="flex flex-col space-y-3 text-body-2 2xl:text-3xl">
               <a
-                href="mailto:hello@huyng.xyz"
+                href="mailto:levimaxkigunda@gmail.com"
                 className="group relative w-fit cursor-pointer"
                 target="_blank"
                 rel="noreferrer"
               >
-                <span>hello@jessenjuguna.xyz</span>
+                <span>levimaxkigunda@gmail.com</span>
                 <span className="absolute bottom-0 left-0 h-[0.12em] w-0 rounded-full bg-secondary-600 duration-300 ease-in-out group-hover:w-full"></span>
               </a>
              
@@ -142,20 +189,8 @@ export default function Contact() {
           <div className="space-y-3 ">
             <h4 className="text-body-1 2xl:text-4xl font-semibold">My Digital Spaces</h4>
             <div className="space-y-3 text-body-2 2xl:text-3xl">
-              {/* <a
-                href="https://bento.me/huyng"
-                className="group flex items-center space-x-2"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Icon icon="simple-icons:bento" color="#666" />
-                <div className="relative">
-                  <span>Bento</span>
-                  <span className="absolute bottom-0 left-0 h-[0.10em] w-0 rounded-full bg-secondary-600 duration-300 ease-in-out group-hover:w-full"></span>
-                </div>
-              </a> */}
               <a
-                href="https://github.com/Mj-Njuguna"
+                href="https://github.com/kigundalevi"
                 className="group flex items-center space-x-2"
                 target="_blank"
                 rel="noreferrer"
@@ -167,7 +202,7 @@ export default function Contact() {
                 </div>
               </a>
               <a
-                href="https://www.linkedin.com/in/michael-njuguna-6778512a0/"
+                href="https://www.linkedin.com/in/levi-kigunda-676270257/"
                 className="group group flex w-fit items-center space-x-2"
                 target="_blank"
                 rel="noreferrer"
@@ -178,18 +213,6 @@ export default function Contact() {
                   <span className="absolute bottom-0 left-0 h-[0.12em] w-0 rounded-full bg-secondary-600 duration-300 ease-in-out group-hover:w-full"></span>
                 </div>
               </a>
-              {/* <a
-                href="https://www.youtube.com/channel/UCBOAB9RV647G93GxLhEXleA"
-                className="group flex items-center space-x-2"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Icon icon="mdi:youtube" color="#666" />
-                <div className="relative">
-                  <span>YouTube</span>
-                  <span className="absolute bottom-0 left-0 h-[0.10em] w-0 rounded-full bg-secondary-600 duration-300 ease-in-out group-hover:w-full"></span>
-                </div>
-              </a> */}
             </div>
           </div>
           <div className="space-y-3 ">

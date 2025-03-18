@@ -1,7 +1,7 @@
-import ibgroup from "/src/assets/images/ib-group-desktop.webp";
-import memento from "/src/assets/images/memento-desktop.webp";
-import acc from "/src/assets/images/acc-square.webp";
-import daddy from "/src/assets/images/godaddy-desktop.webp";
+import ibgroup from "/src/assets/images/stab-main.png";
+import memento from "/src/assets/images/iphonemockup.png";
+import blueprint from "/src/assets/images/blueprint.png";
+import carsawa from "/src/assets/videos/carsawa.mp4";
 import sunnyside from "/src/assets/images/sunnyside-desktop.webp";
 import Projects from "../ui/Projects";
 import Heading from "../ui/Heading";
@@ -18,13 +18,13 @@ export default function Works({ forwardedRef }) {
         {/* Project #1 */}
         <div className=" col-span-1 md:col-span-12">
           <Projects
-            link=""
+            link="https://stab-tau.vercel.app/"
             img={ibgroup}
             alt="Stab mobile money platform"
             name="Stab application"
-            type=" Design • Frontend Development"
+            type=" Mobile Application • Frontend Development"
             year="2025"
-            tools="React native • TailwindCSS • Figma"
+            tools="React native • TailwindCSS • solana"
 
           />
         </div>
@@ -33,33 +33,38 @@ export default function Works({ forwardedRef }) {
           <Projects
             link=""
             img={memento}
-            alt="AllyPi mockup"
-            name="memento studio landing page"
-            type="Frontend Development"
+            alt="spotify stats"
+            name="statify"
+            type="Mobile Application • Frontend Development"
             year="2025"
-            tools="HTML • TailwindCSS • JavaScript"
+            tools="React native • TailwindCSS • JavaScript"
           />
         </div>
         <div className="col-span-1 pt-0 md:col-span-5 md:pt-80">
           <Projects
-            link="https://realbusinessaccountants.netlify.app"
-            img={acc}
-            alt="real business accountant project mockup"
-            name="real business accountants"
+            link="https://blueprintstudio.vercel.app/"
+            img={blueprint}
+            alt="blueprint studio project "
+            name="BLUEPRINT STUDIO"
             type="Web Design • Frontend Development"
-            year="2023"
-            tools="HTML • CSS • JavaScript • Figma"
+            year="2024"
+            tools="Reactjs • TailwindCSS "
           />
         </div>
         <div className="col-span-1 h-fit pt-0 md:col-span-8 md:pt-20">
           <Projects
-            link="https://godaddyuiclone.netlify.app"
-            img={daddy}
-            alt="godaddy clone page mockup"
-            name="GODADDY LANDING PAGE CLONE"
+            link="https://carsawadealerplatform.netlify.app"
+            autoPlay
+            muted
+            loop
+            playsInline
+            playbackRate={2}
+            video={carsawa}
+            alt="carsawa dealer platform mockup"
+            name="CARSAWA DEALER PLATFORM"
             type="Frontend Development"
-            year="2023"
-            tools="HTML • TailwindCSS • JavaScript"
+            year="2025"
+            tools="Reactjs • TailwindCSS • vite"
           />
         </div>
         <div className="col-span-1 h-fit md:col-span-4">

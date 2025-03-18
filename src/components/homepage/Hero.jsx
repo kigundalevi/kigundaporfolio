@@ -65,9 +65,9 @@ export default function Hero() {
           className="flex flex-col items-center gap-4 px-4"
         >
           {[
-            { text: "Hi, I'm Njuguna", className: "text-[#777764]" },
-            { text: "Hi, I'm Njuguna", className: "font-outline-3 text-transparent" },
-            { text: "Hi, I'm Njuguna", className: "text-secondary-700" }
+            { text: "Hi, I'm Kigunda", className: "text-[#777764]" },
+            { text: "Hi, I'm Kigunda", className: "font-outline-3 text-transparent" },
+            { text: "Hi, I'm Kigunda", className: "text-secondary-700" }
           ].map((item, index) => (
             <div 
               key={index} 

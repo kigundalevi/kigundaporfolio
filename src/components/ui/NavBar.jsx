@@ -132,7 +132,7 @@ export default function NavBar({ sectionRefs }) {
         aria-label="Logo" 
         className="z-50 text-xl font-bold text-[#70705C]"
       >
-        &copy; JesseNjuguna
+        &copy; LeviKigunda
       </a>
       <nav className="space-x-7 font-grotesk text-body-3 sm:block">
         {[ 
