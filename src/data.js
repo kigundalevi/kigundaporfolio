@@ -2,7 +2,7 @@
 import ibgroup from '/src/assets/images/stab-main.png';
 import memento from '/src/assets/images/iphonemockup.png';
 import acc from '/src/assets/images/acc-square.webp';
-import daddy from '/src/assets/images/godaddy-desktop.webp';
+import daddy from '/src/assets/videos/carsawa.webm';
 import sunnyside from '/src/assets/images/sunny-side-square.webp';
 
 const projectsData = [
@@ -27,7 +27,7 @@ const projectsData = [
   {
     title: 'GoDaddy Landing Page Clone',
     description: 'Web Design / Frontend Development',
-    imageSrc: daddy,
+    videoSrc: daddy,
     link: 'https://godaddyuiclone.netlify.app'
   },
   {
