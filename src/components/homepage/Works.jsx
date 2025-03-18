@@ -53,7 +53,7 @@ export default function Works({ forwardedRef }) {
         </div>
         <div className="col-span-1 h-fit pt-0 md:col-span-8 md:pt-20">
           <Projects
-            link="https://carsawadealerplatform.netlify.app"
+            link="https://carsawa.vercel.app/"
             autoPlay
             muted
             loop
