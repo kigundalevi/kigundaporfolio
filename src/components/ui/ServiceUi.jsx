@@ -41,7 +41,7 @@ export default function ServiceUi({ title, description, items, variant = "defaul
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white">{item.title}</h3>
               </div>
-              <p className="text-white dark:text-black">{item.description}</p>
+              <p className="text-gray-800 dark:text-white">{item.description}</p>
             </div>
             <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-accent-100/20 dark:bg-accent-100/10 group-hover:scale-150 transition-transform duration-500"></div>
           </div>
