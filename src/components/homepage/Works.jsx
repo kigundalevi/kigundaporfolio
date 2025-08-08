@@ -1,8 +1,8 @@
 import ibgroup from "/src/assets/images/stab-main.png";
 import memento from "/src/assets/images/iphonemockup.png";
 import blueprint from "/src/assets/images/blueprint.png";
-import carsawa from "/src/assets/videos/carsawa.mp4";
-import sunnyside from "/src/assets/images/sunnyside-desktop.webp";
+import carsawaadminvid from "/src/assets/videos/carsawaadminvid.mp4";
+import carsawaclient from "/src/assets/videos/carsawaclient.mp4";
 import Projects from "../ui/Projects";
 import Heading from "../ui/Heading";
 
@@ -53,29 +53,34 @@ export default function Works({ forwardedRef }) {
         </div>
         <div className="col-span-1 h-fit pt-0 md:col-span-8 md:pt-20">
           <Projects
-            link="https://carsawa.vercel.app/"
+            link="https://www.carsawa.africa/"
             autoPlay
             muted
             loop
             playsInline
             playbackRate={2}
-            video={carsawa}
-            alt="carsawa dealer platform mockup"
-            name="CARSAWA DEALER PLATFORM"
+            video={carsawaclient}
+            alt="carsawa marketplace"
+            name="CARSAWA MARKETPLACE"
             type="Frontend Development"
             year="2025"
-            tools="Reactjs • TailwindCSS • vite"
+            tools="Nextjs • TailwindCSS • Reactjs"
           />
         </div>
         <div className="col-span-1 h-fit md:col-span-4">
         <Projects
-            link="https://sunnysidechallenge.netlify.app"
-            img={sunnyside}
-            alt="sunnyside project mockup"
-            name="SUNNYSIDE LANDING PAGE"
+            link="https://admin.carsawa.africa"
+            autoPlay
+            muted
+            loop
+            playsInline
+            playbackRate={2}
+            video={carsawaadminvid}
+            alt="carsawa admin"
+            name="CARSAWA ADMIN"
             type="Frontend Development"
-            year="2022"
-            tools="HTML • TailwindCSS • JavaScript"
+            year="2025"
+            tools="Nextjs • TailwindCSS • Reactjs"
           />
          
         </div>

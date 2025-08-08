@@ -56,18 +56,18 @@ export default function About() {
             >
               A brief intro, who am I?
             </h3>
-            <p ref={body} className=" translate-y-10 text-body-1 2xl:text-4xl opacity-0">
-              I am an independent Mobile developer and backend engineer based in
-              Nairobi, Kenya.
-              <br></br>
-              <br></br>I specialize in crafting elevated, intuitive, and
-              intuitive interfaces that bring ideas to life. As a passionate mobile developer, 
-              I transform complex problems into simple, beautiful solutions that help businesses connect with their users in meaningful ways.
-               Let me add that touch of digital magic to your next project! ✨
-              <br></br>
-              <br></br>
-            
-            </p>
+            <p ref={body} className="translate-y-10 text-body-1 2xl:text-4xl opacity-0">
+                  I'm a Fullstack Developer and Backend Engineer based in Nairobi, Kenya, 
+                  crafting digital experiences that bridge the gap between imagination and reality.
+                  <br /><br />
+                  With expertise spanning mobile apps, web platforms, and robust backend systems, 
+                  I transform complex challenges into intuitive solutions that users love. 
+                  My approach combines technical precision with creative vision to build products 
+                  that not only function flawlessly but also delight and engage.
+                  <br /><br />
+                  Let's collaborate to turn your innovative ideas into powerful digital realities 
+                  that make a lasting impact. ✨
+               </p>
           </div>
         </div>
       </div>
