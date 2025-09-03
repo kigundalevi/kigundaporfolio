@@ -52,7 +52,7 @@ export default function Contact() {
     });
 
     // Replace these with your actual EmailJS service ID, template ID, and public key
-    const serviceId = 'service_dyxmiqm';
+    const serviceId = 'service_zyylke6';
     const templateId = 'template_w2cw2st';
     const publicKey = 'cTY9Sul5NOu_LMyKY';
 
